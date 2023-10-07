@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Register;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 
@@ -15,11 +17,13 @@ class RegisterFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => fake()->name(),
-            'username' => fake()->unique()->userName(),
-            'password' => 'uj3434785333985tfiurfg8888239238#$$66789',
-            'remember_token' => Str::random(10),
-        ];
+       $student = DB::table('students')->inRandomOrder()->first();
+       $course = DB::table('courses')->inRandomOrder()->first();
+       $clasrooms = DB::table('clasrooms')->inRandomOrder()->first();
+       return [
+           'student_id' => $student->id,
+           'course_id' => $course->id,
+           'classroom_id' => $clasroom->id,
+       ];
     }
 }

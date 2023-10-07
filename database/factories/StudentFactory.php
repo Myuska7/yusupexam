@@ -19,14 +19,10 @@ class StudentFactory extends Factory
      */
     public function definition(): array
     {
-        $classroom = DB::table('classrooms')->inRandomOrder()->first();
-        $course = DB::table('course')->inRandomOrder()->first();
-        $name = fake()->unique()->streetName();
         return [
-            'student_id' => $student->id,
-            'first_name' => $first->name,
-            'last_name' => $last->name,
-            'birthday' => fake()->randomNumber(6),
+            'first_name' => fake()->unique()->firstName(),
+            'last_name' => fake()->unique()->lastName(),
+            'bithday' => fake()->randomNumber(6),
         ];
     }
 }

@@ -13,19 +13,10 @@ class Register extends Authenticable
     use HasFactory, HasMany, HasApiTokens,Notifiable;
 
     protected $fillable = [
-        'name',
-        'username',
-        'password'
+        'id',
+        'name'
     ];
 
-    protected  $hidden = [
-        'password',
-        'remember_token',
-    ];
-
-    protected $casts = [
-        'password' => 'hashed',
-    ];
 
 
     public function courses(): HasMany

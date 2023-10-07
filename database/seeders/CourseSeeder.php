@@ -16,9 +16,7 @@ class CourseSeeder extends Seeder
 
         foreach ($courses as $course) {
             Course::create([
-                'name' => $register,
-                'username' => str($register)->lower(),
-                'password' => bcrypt('something'),
+                'name' => $course,
             ]);
         }
     }

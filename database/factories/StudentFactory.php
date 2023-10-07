@@ -26,7 +26,7 @@ class StudentFactory extends Factory
             'student_id' => $student->id,
             'first_name' => $first->name,
             'last_name' => $last->name,
-            'birthday' => fake()->randomNumber(2),
+            'birthday' => fake()->randomNumber(6),
         ];
     }
 }
